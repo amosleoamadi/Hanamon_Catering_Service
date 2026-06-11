@@ -8,7 +8,7 @@ import {
 } from "lucide-react";
 import { motion } from "framer-motion";
 import { whatsappUrl } from "../../../../lib";
-import { BsFacebook, BsInstagram, BsTwitter } from "react-icons/bs";
+import { BsInstagram, BsTiktok, BsTwitter } from "react-icons/bs";
 import { useTheme } from "../../../context/useTheme";
 
 export default function Contact() {
@@ -97,10 +97,10 @@ export default function Contact() {
                   <Phone className="w-4 h-4" />
                 </div>
                 <a
-                  href="tel:+1234567890"
+                  href="tel:+2349112151750"
                   className="hover:text-amber-500 dark:hover:text-amber-400 transition-colors"
                 >
-                  +1 (234) 567-890
+                  09112151750
                 </a>
               </div>
 
@@ -113,10 +113,10 @@ export default function Contact() {
                   <Mail className="w-4 h-4" />
                 </div>
                 <a
-                  href="mailto:hello@hanamoncatering.com"
+                  href="mailto:Hanamoncateringservices@gmail.com"
                   className="hover:text-amber-500 dark:hover:text-amber-400 transition-colors"
                 >
-                  hello@hanamoncatering.com
+                  Hanamoncateringservices@gmail.com
                 </a>
               </div>
 
@@ -135,8 +135,14 @@ export default function Contact() {
             {/* Social Links Panel */}
             <div className="flex gap-4 pt-2">
               {[
-                { icon: <BsInstagram className="w-5 h-5" />, href: "#" },
-                { icon: <BsFacebook className="w-5 h-5" />, href: "#" },
+                {
+                  icon: <BsInstagram className="w-5 h-5" />,
+                  href: "https://www.instagram.com/hanamon_catering_services?igsh=MThjcG1lM3hjenVsaQ==",
+                },
+                {
+                  icon: <BsTiktok className="w-5 h-5" />,
+                  href: "https://www.tiktok.com/@hanamoncateringse?_r=1&_t=ZS-975th2hiNUb",
+                },
                 { icon: <BsTwitter className="w-5 h-5" />, href: "#" },
               ].map((social, i) => (
                 <motion.a

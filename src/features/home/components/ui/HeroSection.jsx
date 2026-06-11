@@ -2,6 +2,7 @@ import { Award, Calendar, ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
 import { whatsappUrl } from "../../../../lib";
 import { useTheme } from "../../../context/useTheme";
+import heroImage from "../../../../assets/springroll.jpg";
 
 export default function Hero() {
   const { darkMode } = useTheme();
@@ -161,7 +162,7 @@ export default function Hero() {
             }`}
           >
             <img
-              src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=800&q=80"
+              src={heroImage}
               alt="Hanamon Catering Masterpiece"
               className="w-full h-full object-cover transition-all duration-1000 ease-out group-hover:scale-105 filter saturate-100 dark:brightness-90 dark:contrast-105"
             />

@@ -1,39 +1,44 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Users, ChefHat, ArrowRight } from "lucide-react";
-import {
-  motion,
-  useMotionValue,
-  useTransform,
-  animate,
-  useInView,
-} from "framer-motion";
+import { motion, useInView } from "framer-motion";
 import { whatsappUrl } from "../../../../lib";
 import { useTheme } from "../../../context/useTheme";
 
-// Small, optimized helper component for counting mechanics (Clean JavaScript)
 function CountUp({ to, suffix = "" }) {
-  const count = useMotionValue(0);
-  const rounded = useTransform(count, (latest) => Math.round(latest));
+  const [count, setCount] = useState(0);
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const hasAnimated = useRef(false);
 
   useEffect(() => {
-    if (isInView) {
-      // Animates from 0 to target number over 2 seconds once visible
-      const controls = animate(count, to, { duration: 2, ease: "easeOut" });
-      return controls.stop;
+    if (isInView && !hasAnimated.current) {
+      hasAnimated.current = true;
+      let start = 0;
+      const duration = 2000; // 2 seconds
+      const stepTime = 20; // update every 20ms
+      const steps = duration / stepTime;
+      const increment = to / steps;
+
+      const timer = setInterval(() => {
+        start += increment;
+        if (start >= to) {
+          setCount(to);
+          clearInterval(timer);
+        } else {
+          setCount(Math.floor(start));
+        }
+      }, stepTime);
+
+      return () => clearInterval(timer);
     }
-  }, [isInView, to, count]);
+  }, [isInView, to]);
 
-  useEffect(() => {
-    return rounded.on("change", (latest) => {
-      if (ref.current) {
-        ref.current.textContent = latest + suffix;
-      }
-    });
-  }, [rounded, suffix]);
-
-  return <span ref={ref}>0{suffix}</span>;
+  return (
+    <span ref={ref}>
+      {count}
+      {suffix}
+    </span>
+  );
 }
 
 export default function About() {
@@ -165,7 +170,7 @@ export default function About() {
               className="space-y-4 font-normal text-base leading-relaxed"
             >
               <p className={darkMode ? "text-zinc-400" : "text-zinc-700"}>
-                Chef Hanamon brings over 12 years of experience in luxury
+                Chef Hanamon brings over 5 years of experience in luxury
                 catering, having trained in Paris and worked in Michelin-starred
                 kitchens before founding Hanamon Catering Service. Our
                 philosophy is simple: every event deserves unforgettable food
@@ -185,7 +190,7 @@ export default function About() {
               className="grid grid-cols-2 gap-4 pt-4"
             >
               {[
-                { targetValue: 500, suffix: "+", title: "Events Catered" },
+                { targetValue: 100, suffix: "+", title: "Events Catered" },
                 { targetValue: 50, suffix: "+", title: "5-Star Reviews" },
               ].map((stat, i) => (
                 <div

@@ -1,6 +1,5 @@
 import { Mail, Phone } from "lucide-react";
-import { BsInstagram } from "react-icons/bs";
-import { FaFacebook } from "react-icons/fa6";
+import { BsInstagram, BsTiktok } from "react-icons/bs";
 import { useLocation } from "react-router-dom";
 import logo from "../../../../assets/logo.jpeg"; // adjust path as needed
 
@@ -142,13 +141,13 @@ export default function Footer() {
               <div className="flex items-center gap-2">
                 <Phone className="w-4 h-4 text-amber-500 dark:text-amber-400" />
                 <span className="text-gray-600 dark:text-zinc-400">
-                  +1 (555) 123-4567
+                  081 652 19031
                 </span>
               </div>
               <div className="flex items-center gap-2">
                 <Mail className="w-4 h-4 text-amber-500 dark:text-amber-400" />
                 <span className="text-gray-600 dark:text-zinc-400">
-                  hello@hanamoncatering.com
+                  Hanamoncateringservices@gmail.com
                 </span>
               </div>
             </div>
@@ -161,13 +160,13 @@ export default function Footer() {
             {/* Social Links */}
             <div className="flex gap-4">
               <a
-                href="#"
+                href="https://www.tiktok.com/@hanamoncateringse?_r=1&_t=ZS-975th2hiNUb"
                 className="text-gray-500 dark:text-zinc-500 hover:text-amber-500 dark:hover:text-amber-400 transition-colors"
               >
-                <FaFacebook className="w-5 h-5" />
+                <BsTiktok className="w-5 h-5" />
               </a>
               <a
-                href="#"
+                href="https://www.instagram.com/hanamon_catering_services?igsh=MThjcG1lM3hjenVsaQ=="
                 className="text-gray-500 dark:text-zinc-500 hover:text-amber-500 dark:hover:text-amber-400 transition-colors"
               >
                 <BsInstagram className="w-5 h-5" />

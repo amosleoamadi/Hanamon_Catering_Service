@@ -1,5 +1,12 @@
+import image from "../assets/gallery1.jpg";
+import image1 from "../assets/gallery2.jpg";
+import image2 from "../assets/gallery3.jpg";
+import image3 from "../assets/springroll.jpg";
+import image4 from "../assets/chops.jpg";
+import image5 from "../assets/download.jpg";
+
 export const whatsappConfig = {
-  number: "1234567890", // Replace with actual number
+  number: "09112151750", // Replace with actual number
   message: encodeURIComponent(
     "Hello Hanamon Catering Service! I visited your website and would love to get an inquiry regarding catering services for an upcoming event. Please let me know what information you need from me. Thanks!",
   ),
@@ -46,12 +53,15 @@ export const services = [
 ];
 
 export const galleryImages = [
-  "https://images.unsplash.com/photo-1555244162-803834f70033?auto=format&fit=crop&w=800&q=80",
-  "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&w=800&q=80",
-  "https://images.unsplash.com/photo-1546549032-9571cd6b27df?auto=format&fit=crop&w=800&q=80",
-  "https://images.unsplash.com/photo-1484723091739-30a097e8f929?auto=format&fit=crop&w=800&q=80",
-  "https://images.unsplash.com/photo-1476224203421-9ac39bcb3327?auto=format&fit=crop&w=800&q=80",
-  "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=800&q=80",
+  image,
+  image1,
+  image2,
+  image3,
+  image4,
+  image5,
+  // "https://images.unsplash.com/photo-1546549032-9571cd6b27df?auto=format&fit=crop&w=800&q=80",
+  // "https://images.unsplash.com/photo-1484723091739-30a097e8f929?auto=format&fit=crop&w=800&q=80",
+  // "https://images.unsplash.com/photo-1476224203421-9ac39bcb3327?auto=format&fit=crop&w=800&q=80",
 ];
 
 export const testimonials = [
